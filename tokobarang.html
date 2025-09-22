@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Manajemen Produk Toko</title>
+  </head>
+  <body>
+    <h2>Manajemen Produk Toko Online</h2>
+    <pre id="output"></pre>
+
+    <script>
+      // Array awal berisi produk yang tersedia
+      let produkToko = [
+        { id: 1, nama: "Laptop", harga: 7000000, stok: 5 },
+        { id: 2, nama: "Mouse", harga: 200000, stok: 10 },
+        { id: 3, nama: "Keyboard", harga: 350000, stok: 7 },
+        { id: 4, nama: "Monitor", harga: 1500000, stok: 10 },
+      ];
+
+      // Fungsi untuk menambahkan produk baru
+      function tambahProduk(nama, harga, stok) {
+        // id dibuat otomatis (id terakhir + 1)
+        let idBaru =
+          produkToko.length > 0 ? produkToko[produkToko.length - 1].id + 1 : 1;
+        let produkBaru = { id: idBaru, nama: nama, harga: harga, stok: stok };
+        produkToko.push(produkBaru);
+      }
+
+      // Fungsi untuk menghapus produk berdasarkan id
+      function hapusProduk(id) {
+        produkToko = produkToko.filter((produk) => produk.id !== id);
+      }
+
+      // Fungsi untuk menampilkan daftar produk
+      function tampilkanProduk() {
+        let teks = "Daftar Produk Toko:\n\n";
+        produkToko.forEach((p) => {
+          teks += `ID: ${p.id}, Nama: ${
+            p.nama
+          }, Harga: Rp ${p.harga.toLocaleString()}, Stok: ${p.stok}\n`;
+        });
+        document.getElementById("output").innerText = teks;
+      }
+
+      // --- Contoh penggunaan ---
+      tampilkanProduk(); // tampilkan produk awal
+
+      tambahProduk("Headset", 500000, 8);
+      tambahProduk("Monitor", 1500000, 4);
+
+      hapusProduk(); // hapus produk dengan id 2 (Mouse)
+
+      tampilkanProduk(); // tampilkan lagi setelah update
+    </script>
+  </body>
+</html>
