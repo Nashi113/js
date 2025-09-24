@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistem Manajemen Transportasi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Sistem Manajemen Transportasi</h2>
+
+    <!-- Form input pelanggan -->
+    <form id="formSewa" class="form-card">
+      <label for="nama">Nama Pelanggan</label>
+      <input type="text" id="nama" required placeholder="Masukkan Nama Anda">
+
+      <label for="telepon">Nomor Telepon</label>
+      <input type="text" id="telepon" required placeholder="Masukkan No.Telepon">
+
+      <label for="kendaraan">Kendaraan</label>
+      <select id="kendaraan" required>
+        <option value="">--Pilih Kendaraan--</option>
+        <option value="Mobil">Mobil</option>
+        <option value="Motor">Motor</option>
+        <option value="Bus">Bus</option>
+      </select>
+
+      <button type="button" id="addBtn" class="btn primary">Tambah ke Tabel</button>
+    </form>
+
+    <!-- Tabel daftar pelanggan sementara -->
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Nomor Telepon</th>
+          <th>Kendaraan</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="tabelPelanggan">
+        <!-- Data pelanggan sementara -->
+      </tbody>
+    </table>
+
+    <button id="submitBtn" class="btn success">Submit Semua</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
