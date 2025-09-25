@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Tugas Pertemuan 5 - JS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Manajemen Produk Toko Online</h2>
+
+    <div class="form-card">
+      <label for="nama">Nama Produk</label>
+      <input type="text" id="nama" placeholder="Masukkan Nama Produk" />
+
+      <label for="harga">Harga</label>
+      <input type="number" id="harga" placeholder="Masukkan Harga" />
+
+      <label for="stok">Stok</label>
+      <input type="number" id="stok" placeholder="Masukkan Stok Barang" />
+
+      <button id="addBtn" class="btn primary">Tambah Produk</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nama</th>
+          <th>Harga</th>
+          <th>Stok</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="produkList"></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
